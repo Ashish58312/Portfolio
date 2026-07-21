@@ -183,7 +183,6 @@
                                  onerror="handleProfileImgError(this)"
                                  class="w-full h-full object-cover object-top transform group-hover:scale-105 transition duration-500">
                         </div>
-                        </div>
                     </div>
                 </div>
 
@@ -891,7 +890,6 @@
 
     <script>
         function handleProfileImgError(img) {
-            // Check through local user image filenames
             const localSources = ['ashish_8.jpg', 'ashish_7.jpg', 'ashish_6.jpg', 'ashish_5.jpg', 'ashish_4.jpg', 'ashish_3.jpg', 'ashish_2.jpg', 'ashish.jpg'];
             let currentIndex = img.dataset.sourceIndex ? parseInt(img.dataset.sourceIndex) : 0;
 
@@ -900,7 +898,6 @@
                 img.dataset.sourceIndex = currentIndex;
                 img.src = localSources[currentIndex];
             } else {
-                // If local image files aren't in the current folder yet, display an elegant name avatar
                 img.onerror = null;
                 const parentDiv = img.parentElement;
                 parentDiv.innerHTML = `
@@ -909,11 +906,65 @@
                             CA
                         </div>
                         <h4 class="text-lg font-bold text-white">Cheppula Ashish</h4>
-                        <p class="text-xs text-indigo-400 mt-1">Place <code class="bg-slate-800 px-1.5 py-0.5 rounded text-amber-300">ashish_8.jpg</code> in project folder</p>
+                        <p class="text-xs text-indigo-400 mt-1">Place <code class="bg-slate-800 px-1.5 py-0.5 rounded text-amber-300">ashish.jpg</code> in project folder</p>
                     </div>
                 `;
             }
         }
 
         // Mobile menu toggle
-<!-- ... existing code -->
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Resume Modal Functions
+        function openResumeModal() {
+            document.getElementById('resume-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeResumeModal() {
+            document.getElementById('resume-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Certificate Modal Functions
+        function showCertModal(title, org, date, id) {
+            document.getElementById('cert-modal-title').innerText = title;
+            document.getElementById('cert-modal-org').innerText = org;
+            document.getElementById('cert-modal-date').innerHTML = `<span class="text-slate-500">Date Issued:</span> ${date}`;
+            document.getElementById('cert-modal-id').innerHTML = `<span class="text-slate-500">Credential Ref:</span> ${id}`;
+            document.getElementById('cert-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCertModal() {
+            document.getElementById('cert-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Skill Filtering
+        function filterSkills(category) {
+            const cards = document.querySelectorAll('.skill-card');
+            const buttons = document.querySelectorAll('.skill-tab-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-indigo-600', 'text-white', 'shadow-lg');
+                btn.classList.add('glass', 'text-slate-300');
+            });
+
+            event.currentTarget.classList.remove('glass', 'text-slate-300');
+            event.currentTarget.classList.add('bg-indigo-600', 'text-white', 'shadow-lg');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
