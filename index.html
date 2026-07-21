@@ -1,290 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cheppula Ashish - Modern Portfolio</title>
-    <!-- Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Poppins (for headings) and Open Sans (for body) --><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Cheppula Ashish - Portfolio | 4th Year CSE & MERN Developer</title>
     
-    <style>
-        :root {
-            --primary-color: #6366F1; /* Indigo */
-            --secondary-color: #3B82F6; /* Blue */
-            --text-dark: #1F2937; /* Dark Gray */
-            --text-light: #4B5563; /* Medium Gray */
-            --bg-light: #F9FAFB; /* Off-White */
-            --bg-dark: #111827; /* Dark Blue-Gray */
-            --accent-light: #ECF2FF; /* Light Blue for highlights */
-        }
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            color: var(--text-light);
-            background-color: var(--bg-light);
-        }
-
-        h1, h2, h3 {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-dark);
-        }
-
-        /* Custom Scrollbar for better aesthetics */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-light);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary-color);
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--secondary-color);
-        }
-
-        /* Keyframe for subtle bounce-in effect */
-        @keyframes bounceIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            60% { opacity: 1; transform: scale(1.02); }
-            100% { transform: scale(1); }
-        }
-
-        .animate-bounceIn {
-            animation: bounceIn 0.6s ease-out forwards;
-        }
-    </style>
-
-    <!-- Tailwind CSS Configuration with custom theme --><script>
+    <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
-                    colors: {
-                        primary: 'var(--primary-color)',
-                        secondary: 'var(--secondary-color)',
-                        textDark: 'var(--text-dark)',
-                        textLight: 'var(--text-light)',
-                        bgLight: 'var(--bg-light)',
-                        bgDark: 'var(--bg-dark)',
-                        accentLight: 'var(--accent-light)',
-                    },
                     fontFamily: {
-                        poppins: ['Poppins', 'sans-serif'],
-                        opensans: ['Open Sans', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Poppins', 'sans-serif'],
                     },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-                        'bounce-in': 'bounceIn 0.6s ease-out forwards',
-                    },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
                         },
-                        bounceIn: {
-                            '0%': { opacity: '0', transform: 'scale(0.9)' },
-                            '60%': { opacity: '1', transform: 'scale(1.02)' },
-                            '100%': { transform: 'scale(1)' },
-                        },
-                    },
+                        darkBg: '#0b0f19',
+                        darkCard: '#111827',
+                        darkBorder: '#1f2937'
+                    }
                 }
             }
         }
     </script>
-</head>
-<body class="bg-bgLight font-opensans text-textLight">
 
-    <!-- Header / Navigation --><header class="sticky top-0 bg-white shadow-md z-50 py-4">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-            <a href="#hero" class="text-3xl font-poppins font-extrabold text-primary tracking-wide">Ashish.</a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#about" class="text-textDark hover:text-primary font-semibold transition duration-300 relative group">
-                    About
-                    <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .glass {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-effect {
+            box-shadow: 0 0 30px -5px rgba(99, 102, 241, 0.3);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6366f1;
+        }
+    </style>
+</head>
+<body class="bg-[#0b0f19] text-slate-100 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#hero" class="flex items-center gap-2 text-2xl font-bold font-display text-white tracking-tight group">
+                    <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-sky-400 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition duration-300">
+                        CA
+                    </span>
+                    <span>Ashish<span class="text-indigo-400">.</span></span>
                 </a>
-                <a href="#skills" class="text-textDark hover:text-primary font-semibold transition duration-300 relative group">
-                    Skills
-                    <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
-                </a>
-                <a href="#experience" class="text-textDark hover:text-primary font-semibold transition duration-300 relative group">
-                    Experience
-                    <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
-                </a>
-                <a href="#projects" class="text-textDark hover:text-primary font-semibold transition duration-300 relative group">
-                    Projects
-                    <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
-                </a>
-                <a href="#contact" class="text-textDark hover:text-primary font-semibold transition duration-300 relative group">
-                    Contact
-                    <span class="absolute inset-x-0 bottom-0 h-0.5 bg-primary transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
-                </a>
-            </nav>
-            <!-- Mobile nav toggle - implement with JS if needed for more complex nav --><button class="md:hidden text-textDark text-2xl hover:text-primary">
-                <i class="fas fa-bars"></i>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                    <a href="#about" class="hover:text-indigo-400 transition-colors">About</a>
+                    <a href="#coding-profiles" class="hover:text-indigo-400 transition-colors">Profiles</a>
+                    <a href="#skills" class="hover:text-indigo-400 transition-colors">Skills</a>
+                    <a href="#experience" class="hover:text-indigo-400 transition-colors">Experience</a>
+                    <a href="#projects" class="hover:text-indigo-400 transition-colors">Projects</a>
+                    <a href="#certifications" class="hover:text-indigo-400 transition-colors">Certifications</a>
+                    <a href="#contact" class="hover:text-indigo-400 transition-colors">Contact</a>
+                </nav>
+
+                <div class="hidden md:flex items-center gap-4">
+                    <button onclick="openResumeModal()" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-lg shadow-indigo-600/30 hover:shadow-indigo-500/50 transition duration-300 flex items-center gap-2">
+                        <i class="fas fa-file-pdf"></i> View Resume
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white">
+                    <i class="fas fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3 font-medium">
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-slate-300 hover:text-indigo-400">About</a>
+            <a href="#coding-profiles" onclick="toggleMobileMenu()" class="block py-2 text-slate-300 hover:text-indigo-400">Coding Profiles</a>
+            <a href="#skills" onclick="toggleMobileMenu()" class="block py-2 text-slate-300 hover:text-indigo-400">Skills</a>
+            <a href="#experience" onclick="toggleMobileMenu()" class="block py-2 text-slate-300 hover:text-indigo-400">Experience</a>
+            <a href="#projects" onclick="toggleMobileMenu()" class="block py-2 text-slate-300 hover:text-indigo-400">Projects</a>
+            <a href="#certifications" onclick="toggleMobileMenu()" class="block py-2 text-slate-300 hover:text-indigo-400">Certifications</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-slate-300 hover:text-indigo-400">Contact</a>
+            <button onclick="openResumeModal(); toggleMobileMenu();" class="w-full mt-2 py-3 rounded-xl bg-indigo-600 text-white font-semibold text-center flex items-center justify-center gap-2">
+                <i class="fas fa-file-pdf"></i> View Resume
             </button>
         </div>
     </header>
 
-    <!-- Hero Section --><section id="hero" class="relative bg-gradient-to-br from-primary to-secondary min-h-screen flex items-center justify-center text-white py-24 px-4 overflow-hidden">
-        <div class="absolute inset-0 z-0 opacity-10">
-            <!-- Background pattern for visual interest --><svg class="w-full h-full" fill="none" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-                <defs><pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="currentColor"/></pattern></defs>
-                <rect width="100%" height="100%" fill="url(#dots)" class="text-indigo-400 opacity-20"/>
-            </svg>
-        </div>
-        <div class="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 animate-fade-in-up">
-            <!-- Photo/Placeholder --><div class="flex-shrink-0 order-first md:order-last">
-                <div class="w-64 h-64 sm:w-80 sm:h-80 bg-white rounded-full overflow-hidden shadow-2xl border-4 border-white/50 flex items-center justify-center transform hover:scale-105 transition-transform duration-500">
-                    <img src="ashish.png" 
-                         alt="Cheppula Ashish Profile Photo" 
-                         class="object-cover w-full h-full"
-                    >
-                </div>
-            </div>
+    <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[350px] h-[350px] bg-sky-500/15 rounded-full blur-[100px] pointer-events-none"></div>
 
-            <!-- Text Content --><div class="text-center md:text-left flex-grow">
-                <p class="text-xl sm:text-2xl mb-3 font-semibold text-indigo-100 animate-bounceIn" style="animation-delay: 0.1s;">Hello, I'm</p>
-                <h1 class="text-5xl sm:text-7xl font-poppins font-extrabold mb-4 leading-tight animate-bounceIn" style="animation-delay: 0.2s;">CHEPPULA ASHISH</h1>
-                <h2 class="text-2xl sm:text-3xl font-poppins font-semibold text-indigo-200 mb-6 animate-bounceIn" style="animation-delay: 0.3s;">3rd Year CSE Student | Aspiring Developer</h2>
-                <p class="text-lg text-indigo-100 max-w-xl mx-auto md:mx-0 mb-10 animate-fade-in-up" style="animation-delay: 0.4s;">
-                    A passionate third-year Computer Science Engineering student from **Aditya Engineering College**. Currently gaining hands-on experience through internships and developing skills in **Java**, **Python**, and web technologies.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-6 animate-fade-in-up" style="animation-delay: 0.5s;">
-                    <a href="#projects" class="px-8 py-3 bg-white text-primary font-bold rounded-full shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105">
-                        View Projects <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                    <a href="#contact" class="px-8 py-3 border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-primary transition duration-300 transform hover:scale-105">
-                        Contact Me
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section --><section id="about" class="bg-white py-20 px-4 md:px-8">
-        <div class="max-w-6xl mx-auto text-center animate-fade-in-up">
-            <h2 class="text-4xl font-poppins font-bold text-textDark mb-4">About Me</h2>
-            <p class="text-lg text-textLight max-w-3xl mx-auto mb-10">
-                As a dedicated Computer Science Engineering student, I thrive on exploring new technologies and solving complex problems. My academic journey at Aditya Engineering College has equipped me with a strong foundation in core CS concepts, while my certifications and internship experiences have provided practical skills in application development.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-accentLight p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <i class="fas fa-lightbulb text-4xl text-primary mb-4"></i>
-                    <h3 class="text-xl font-poppins font-semibold text-textDark mb-2">Problem Solver</h3>
-                    <p class="text-textLight">Passionate about tackling challenges and finding innovative solutions using logic and code.</p>
-                </div>
-                <div class="bg-accentLight p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <i class="fas fa-laptop-code text-4xl text-primary mb-4"></i>
-                    <h3 class="text-xl font-poppins font-semibold text-textDark mb-2">Aspiring Developer</h3>
-                    <p class="text-textLight">Eager to build robust and scalable applications that make a real impact.</p>
-                </div>
-                <div class="bg-accentLight p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <i class="fas fa-handshake text-4xl text-primary mb-4"></i>
-                    <h3 class="text-xl font-poppins font-semibold text-textDark mb-2">Collaborative Spirit</h3>
-                    <p class="text-textLight">Enjoy working in teams, learning from peers, and contributing to collective success.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills & Certifications Section --><section id="skills" class="bg-bgLight py-20 px-4 md:px-8">
-        <div class="max-w-6xl mx-auto text-center animate-fade-in-up">
-            <h2 class="text-4xl font-poppins font-bold text-textDark mb-12">Skills & Certifications</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Skills --><div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-primary">
-                    <h3 class="text-2xl font-poppins font-semibold text-textDark mb-6">Technical Skills</h3>
-                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
-                        <span class="skill-badge bg-blue-100 text-blue-800"><i class="fab fa-java mr-2"></i>Java</span>
-                        <span class="skill-badge bg-green-100 text-green-800"><i class="fab fa-python mr-2"></i>Python</span>
-                        <span class="skill-badge bg-red-100 text-red-800"><i class="fab fa-html5 mr-2"></i>HTML</span>
-                        <span class="skill-badge bg-purple-100 text-purple-800"><i class="fab fa-css3-alt mr-2"></i>CSS</span>
-                        <span class="skill-badge bg-yellow-100 text-yellow-800"><i class="fas fa-database mr-2"></i>SQL</span>
-                        <span class="skill-badge bg-indigo-100 text-indigo-800"><i class="fas fa-code-branch mr-2"></i>Git</span>
-                        <span class="skill-badge bg-pink-100 text-pink-800"><i class="fab fa-js-square mr-2"></i>JavaScript (Basic)</span>
-                    </div>
-                </div>
-
-                <!-- Certifications --><div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-secondary">
-                    <h3 class="text-2xl font-poppins font-semibold text-textDark mb-6">Certifications</h3>
-                    <ul class="text-left space-y-4">
-                        <li class="flex items-center text-lg text-textDark font-medium">
-                            <i class="fas fa-award text-secondary mr-3 text-2xl"></i>
-                            Java <span class="ml-2 font-bold">(Oracle Certified)</span>
-                        </li>
-                        <li class="flex items-center text-lg text-textDark font-medium">
-                            <i class="fas fa-award text-secondary mr-3 text-2xl"></i>
-                            Python <span class="ml-2 font-bold">(Cisco Certified)</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section (Timeline) --><section id="experience" class="bg-white py-20 px-4 md:px-8">
-        <div class="max-w-6xl mx-auto animate-fade-in-up">
-            <h2 class="text-4xl font-poppins font-bold text-center text-textDark mb-12">My Journey So Far</h2>
-            
-            <div class="relative max-w-4xl mx-auto pt-8 pb-4 before:absolute before:left-2 before:top-0 before:h-full before:w-1 before:bg-gray-200 md:before:left-1/2 md:before:-translate-x-1/2">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
                 
-                <!-- Education Item --><div class="flex flex-col md:relative md:flex-row justify-between mb-12">
-                    <div class="md:w-1/2 p-4 md:p-0 md:pr-10 md:text-right">
-                        <span class="text-sm font-poppins font-semibold text-primary px-3 py-1 bg-accentLight rounded-full mb-2 inline-block">2023 - Present</span>
-                        <h3 class="text-2xl font-poppins font-bold text-textDark mt-2">Aditya Engineering College</h3>
-                        <p class="text-lg text-textLight font-semibold">B.Tech, Computer Science Engineering</p>
-                        <p class="text-gray-500 italic">Currently in my 3rd year, focusing on software development and problem-solving.</p>
+                <!-- Hero Left Column -->
+                <div class="md:col-span-7 text-center md:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs sm:text-sm font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        4th Year B.Tech CSE • CGPA 7.75/10.00
                     </div>
-                    <div class="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-primary absolute left-1/2 top-0 -translate-x-1/2 border-4 border-white shadow-md">
-                        <i class="fas fa-university text-white text-lg"></i>
+
+                    <h1 class="text-4xl sm:text-6xl font-extrabold font-display tracking-tight text-white leading-tight">
+                        Hi, I'm <span class="bg-gradient-to-r from-indigo-400 via-sky-300 to-indigo-200 bg-clip-text text-transparent">Cheppula Ashish</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl font-medium text-slate-300">
+                        <span class="text-indigo-400">MERN Stack Developer</span> & Aspiring Software Engineer
+                    </p>
+
+                    <p class="text-slate-400 text-base sm:text-lg max-w-2xl leading-relaxed">
+                        Computer Science Engineering student at <strong class="text-slate-200">Aditya Engineering College</strong>. Strong foundation in Data Structures & Algorithms, OOPs, Web Development, and hands-on MERN stack industry experience.
+                    </p>
+
+                    <div class="pt-2 flex flex-wrap gap-4 justify-center md:justify-start">
+                        <a href="#projects" class="px-7 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold shadow-lg shadow-indigo-600/30 hover:shadow-indigo-500/50 transition duration-300 flex items-center gap-2">
+                            <i class="fas fa-laptop-code"></i> View Projects
+                        </a>
+                        <a href="#contact" class="px-7 py-3.5 rounded-xl glass hover:bg-slate-800 text-slate-200 font-semibold border border-slate-700 transition duration-300 flex items-center gap-2">
+                            <i class="fas fa-paper-plane"></i> Get In Touch
+                        </a>
                     </div>
-                    <div class="md:w-1/2 p-4 md:p-0 md:pl-10"></div>
+
+                    <div class="pt-6 border-t border-slate-800/80 flex flex-wrap justify-center md:justify-start gap-6 text-slate-400 text-xs sm:text-sm">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-graduation-cap text-indigo-400 text-lg"></i>
+                            <span>Aditya Engineering College</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-award text-amber-400 text-lg"></i>
+                            <span>Oracle & Red Hat Certified</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Internship Item --><div class="flex flex-col md:relative md:flex-row justify-between mb-12">
-                    <div class="md:w-1/2 p-4 md:p-0 md:pl-10 md:order-2">
-                        <span class="text-sm font-poppins font-semibold text-secondary px-3 py-1 bg-blue-100 rounded-full mb-2 inline-block">Internship Period</span>
-                        <h3 class="text-2xl font-poppins font-bold text-textDark mt-2">Aim Technologies Kkd</h3>
-                        <p class="text-lg text-textLight font-semibold">Software Development Trainee</p>
-                        <p class="text-gray-500 italic">Applied theoretical knowledge in a real-world software environment.</p>
-                    </div>
-                    <div class="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-secondary absolute left-1/2 top-0 -translate-x-1/2 border-4 border-white shadow-md">
-                        <i class="fas fa-laptop-code text-white text-lg"></i>
-                    </div>
-                    <div class="md:w-1/2 p-4 md:p-0 md:pr-10 md:order-1"></div>
-                </div>
+                <!-- Hero Right Column - Profile Photo -->
+                <div class="md:col-span-5 flex justify-center">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-sky-500 to-indigo-600 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                        
+                        <div class="relative w-64 h-80 sm:w-80 sm:h-[420px] rounded-3xl overflow-hidden border-4 border-slate-800 shadow-2xl bg-slate-900 flex items-center justify-center">
+                            <!-- Profile Photo Element -->
+                            <img id="profile-photo-img" 
+                                 src="ashish_8.jpg" 
+                                 alt="Cheppula Ashish Profile Photo" 
+                                 onerror="handleProfileImgError(this)"
+                                 class="w-full h-full object-cover object-top transform group-hover:scale-105 transition duration-500">
+                        </div>
 
-            </div>
-        </div>
-    </section>
+                        <!-- Floating Badges -->
+                        <div class="absolute -bottom-4 -left-4 glass px-4 py-2.5 rounded-2xl border border-slate-700 shadow-xl flex items-center gap-3 text-xs font-semibold text-slate-200">
+                            <span class="p-2 rounded-xl bg-emerald-500/20 text-emerald-400">
+                                <i class="fas fa-check-circle"></i>
+                            </span>
+                            <div>
+                                <p class="text-[10px] text-slate-400 uppercase tracking-wider">Status</p>
+                                <p class="text-emerald-300">Ready for Opportunities</p>
+                            </div>
+                        </div>
 
-    <!-- Projects Section --><section id="projects" class="bg-bgLight py-20 px-4 md:px-8">
-        <div class="max-w-6xl mx-auto animate-fade-in-up">
-            <h2 class="text-4xl font-poppins font-bold text-center text-textDark mb-12">Featured Project</h2>
-            
-            <div class="grid grid-cols-1 gap-10">
-                <!-- Project Card: Expense Tracker --><div class="col-span-1 bg-white p-8 rounded-xl shadow-2xl border-b-4 border-primary transform hover:scale-[1.02] transition-transform duration-500">
-                    <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
-                        <i class="fas fa-sack-dollar text-5xl text-primary flex-shrink-0"></i>
-                        <div>
-                            <h3 class="text-3xl font-poppins font-bold text-textDark mb-2">Personal Expense Tracker</h3>
-                            <p class="text-lg text-gray-500 mb-4 font-semibold">Internship Project - Aim Technologies Kkd</p>
-                            <p class="text-textLight mb-6">
-                                A robust web application designed for intuitive financial management. Users can easily track, categorize, and visualize their expenditures, providing clear insights into spending habits. Developed during my internship, this project honed my skills in frontend development and practical application design.
-                            </p>
-                            <div class="flex flex-wrap gap-4">
-                                <a href="https://ashish58312.github.io/Personal-Expense-Tracker/" target="_blank" class="px-6 py-2 bg-primary text-white font-semibold rounded-full shadow-md hover:bg-blue-600 transition duration-300 transform hover:scale-105">
-                                    <i class="fas fa-external-link-alt mr-2"></i> Live Demo
-                                </a>
-                                <a href="https://github.com/Ashish58312/Personal-Expense-Tracker" target="_blank" class="px-6 py-2 border-2 border-gray-300 text-gray-700 font-semibold rounded-full hover:bg-gray-100 transition duration-300 transform hover:scale-105">
-                                    <i class="fab fa-github mr-2"></i> View Code
-                                </a>
+                        <div class="absolute -top-4 -right-4 glass px-4 py-2.5 rounded-2xl border border-slate-700 shadow-xl flex items-center gap-3 text-xs font-semibold text-slate-200">
+                            <span class="p-2 rounded-xl bg-indigo-500/20 text-indigo-400">
+                                <i class="fas fa-code"></i>
+                            </span>
+                            <div>
+                                <p class="text-[10px] text-slate-400 uppercase tracking-wider">Focus</p>
+                                <p class="text-indigo-300">MERN Stack & DSA</p>
                             </div>
                         </div>
                     </div>
@@ -294,73 +211,729 @@
         </div>
     </section>
 
-    <!-- Contact Section --><section id="contact" class="bg-gradient-to-tr from-primary to-secondary text-white py-20 px-4 md:px-8">
-        <div class="max-w-4xl mx-auto text-center animate-fade-in-up">
-            <h2 class="text-4xl font-poppins font-bold mb-4">Let's Connect!</h2>
-            <p class="text-lg text-indigo-100 max-w-2xl mx-auto mb-12">
-                I'm actively seeking opportunities to contribute my skills and learn more. Whether you have a project idea, an internship opening, or just want to say hello, my inbox is always open.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                <!-- Contact Info Card --><div class="bg-white p-8 rounded-xl shadow-lg border-b-4 border-white/50 text-textDark">
-                    <h3 class="text-2xl font-poppins font-bold mb-6 text-primary">Reach Out Directly</h3>
-                    <div class="space-y-5">
-                        <p class="flex items-center text-lg">
-                            <i class="fas fa-envelope text-secondary text-2xl w-8"></i>
-                            <span class="font-semibold mr-2">Email:</span> <a href="mailto:awesome.ashish.2005@gmail.com" class="hover:text-primary transition-colors duration-300">awesome.ashish.2005@gmail.com</a>
+    <section id="coding-profiles" class="py-16 bg-slate-900/50 border-y border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-xs uppercase font-semibold text-indigo-400 tracking-widest mb-2">Technical Presence</h2>
+                <p class="text-3xl font-bold font-display text-white">Coding & Competitive Profiles</p>
+                <p class="text-slate-400 text-sm mt-2">Connect and view my problem-solving progress across major platforms</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 sm:gap-6">
+                <!-- LeetCode -->
+                <a href="https://leetcode.com/u/ashish583/" target="_blank" class="glass p-5 rounded-2xl border border-slate-800 hover:border-amber-500/50 hover:bg-slate-800/80 transition duration-300 flex flex-col items-center text-center group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition duration-300">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <span class="font-bold text-white text-sm group-hover:text-amber-400 transition">LeetCode</span>
+                    <span class="text-xs text-slate-400 mt-1">@ashish583</span>
+                </a>
+
+                <!-- GeeksforGeeks -->
+                <a href="https://www.geeksforgeeks.org/profile/awesomeashish?tab=activity" target="_blank" class="glass p-5 rounded-2xl border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-800/80 transition duration-300 flex flex-col items-center text-center group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition duration-300">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <span class="font-bold text-white text-sm group-hover:text-emerald-400 transition">GeeksforGeeks</span>
+                    <span class="text-xs text-slate-400 mt-1">awesomeashish</span>
+                </a>
+
+                <!-- CodeChef -->
+                <a href="https://www.codechef.com/users/ashish583" target="_blank" class="glass p-5 rounded-2xl border border-slate-800 hover:border-amber-700/50 hover:bg-slate-800/80 transition duration-300 flex flex-col items-center text-center group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-700/10 text-amber-600 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition duration-300">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <span class="font-bold text-white text-sm group-hover:text-amber-500 transition">CodeChef</span>
+                    <span class="text-xs text-slate-400 mt-1">ashish583</span>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/Ashish58312" target="_blank" class="glass p-5 rounded-2xl border border-slate-800 hover:border-indigo-500/50 hover:bg-slate-800/80 transition duration-300 flex flex-col items-center text-center group">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition duration-300">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <span class="font-bold text-white text-sm group-hover:text-indigo-300 transition">GitHub</span>
+                    <span class="text-xs text-slate-400 mt-1">Ashish58312</span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/ashish-cheppula-369b23294/" target="_blank" class="glass p-5 rounded-2xl border border-slate-800 hover:border-sky-500/50 hover:bg-slate-800/80 transition duration-300 flex flex-col items-center text-center group col-span-2 md:col-span-1">
+                    <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <span class="font-bold text-white text-sm group-hover:text-sky-300 transition">LinkedIn</span>
+                    <span class="text-xs text-slate-400 mt-1">ashish-cheppula</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="glass p-8 rounded-3xl border border-slate-800 space-y-6">
+                        <h3 class="text-2xl font-bold font-display text-white border-b border-slate-800 pb-4">
+                            Personal Summary
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Enthusiastic and driven 4th-year B.Tech Computer Science Engineering student with a solid grounding in Data Structures, Algorithms, Object-Oriented Programming, and full-stack web development.
                         </p>
-                        <p class="flex items-center text-lg">
-                            <i class="fas fa-phone text-secondary text-2xl w-8"></i>
-                            <span class="font-semibold mr-2">Phone:</span> +91 951552243
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Experienced in building scalable applications using the MERN stack (MongoDB, Express.js, React.js, Node.js) through hands-on industry internships and project work.
                         </p>
-                        <p class="flex items-center text-lg">
-                            <i class="fas fa-map-marker-alt text-secondary text-2xl w-8"></i>
-                            <span class="font-semibold mr-2">Location:</span> Aditya Engineering College, AP
-                        </p>
+
+                        <div class="space-y-3 pt-2">
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-xs">
+                                <span class="text-slate-400">Degree</span>
+                                <span class="font-semibold text-white">B.Tech in CSE (2023 - 2027)</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-xs">
+                                <span class="text-slate-400">Current CGPA</span>
+                                <span class="font-bold text-emerald-400">7.75 / 10.00</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-xs">
+                                <span class="text-slate-400">College</span>
+                                <span class="font-semibold text-white">Aditya Engineering College</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Social Links Card --><div class="bg-white p-8 rounded-xl shadow-lg border-b-4 border-white/50 text-textDark">
-                    <h3 class="text-2xl font-poppins font-bold mb-6 text-primary">Find Me Online</h3>
-                    <div class="flex flex-wrap justify-center md:justify-start gap-6 text-3xl">
-                        <a href="https://www.linkedin.com/in/ashish-cheppula-369b23294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="text-blue-700 hover:text-blue-900 transform hover:scale-110 transition-transform duration-300">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/Ashish58312" target="_blank" class="text-gray-800 hover:text-gray-900 transform hover:scale-110 transition-transform duration-300">
-                            <i class="fab fa-github-square"></i>
-                        </a>
-                        <!-- Add other social links if you have them, e.g., Twitter, personal blog --></div>
-                    <p class="text-sm text-gray-500 mt-8">Connect with me on social media for updates on my work and interests.</p>
+                <div class="lg:col-span-7 space-y-8">
+                    <div>
+                        <h2 class="text-xs uppercase font-semibold text-indigo-400 tracking-widest mb-2">Academic Excellence</h2>
+                        <p class="text-3xl font-bold font-display text-white">Education & Core Foundations</p>
+                    </div>
+
+                    <div class="glass p-8 rounded-3xl border border-slate-800 space-y-6 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-bl-full pointer-events-none"></div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-2xl shrink-0 border border-indigo-500/30">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300">
+                                    Expected Graduation: May 2027
+                                </span>
+                                <h3 class="text-xl font-bold text-white mt-2">Aditya Engineering College</h3>
+                                <p class="text-sm font-medium text-slate-300">Bachelor of Technology - Computer Science Engineering</p>
+                                <p class="text-xs text-slate-400 mt-1">Kakinada / Surampalem, Andhra Pradesh, India</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-800">
+                            <div class="p-4 rounded-2xl bg-slate-900/50 border border-slate-800">
+                                <p class="text-xs text-slate-400">Current Year</p>
+                                <p class="text-lg font-bold text-white mt-1">4th Year CSE</p>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-slate-900/50 border border-slate-800">
+                                <p class="text-xs text-slate-400">Academic Score</p>
+                                <p class="text-lg font-bold text-emerald-400 mt-1">7.75 CGPA</p>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-slate-900/50 border border-slate-800">
+                                <p class="text-xs text-slate-400">Core Focus</p>
+                                <p class="text-lg font-bold text-indigo-300 mt-1">MERN & DSA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-slate-900/40 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-xs uppercase font-semibold text-indigo-400 tracking-widest mb-2">Technical Proficiency</h2>
+                <p class="text-3xl font-bold font-display text-white">Skills & Technologies</p>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12" id="skill-tabs">
+                <button onclick="filterSkills('all')" class="skill-tab-btn active px-5 py-2.5 rounded-xl text-xs font-semibold bg-indigo-600 text-white shadow-lg transition">All Skills</button>
+                <button onclick="filterSkills('web')" class="skill-tab-btn px-5 py-2.5 rounded-xl text-xs font-semibold glass text-slate-300 hover:text-white transition">Web & MERN Stack</button>
+                <button onclick="filterSkills('lang')" class="skill-tab-btn px-5 py-2.5 rounded-xl text-xs font-semibold glass text-slate-300 hover:text-white transition">Programming Languages</button>
+                <button onclick="filterSkills('db')" class="skill-tab-btn px-5 py-2.5 rounded-xl text-xs font-semibold glass text-slate-300 hover:text-white transition">Databases</button>
+                <button onclick="filterSkills('tools')" class="skill-tab-btn px-5 py-2.5 rounded-xl text-xs font-semibold glass text-slate-300 hover:text-white transition">Tools & Concepts</button>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6" id="skills-grid">
+                <!-- React.js -->
+                <div class="skill-card web all glass p-6 rounded-2xl border border-slate-800 hover:border-sky-500/50 transition duration-300 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-2xl shrink-0">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">React.js</h4>
+                        <p class="text-xs text-slate-400">Frontend UI</p>
+                    </div>
+                </div>
+
+                <!-- Node.js -->
+                <div class="skill-card web all glass p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition duration-300 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl shrink-0">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">Node.js</h4>
+                        <p class="text-xs text-slate-400">Backend Runtime</p>
+                    </div>
+                </div>
+
+                <!-- Express.js -->
+                <div class="skill-card web all glass p-6 rounded-2xl border border-slate-800 hover:border-slate-400/50 transition duration-300 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-slate-500/10 text-slate-300 flex items-center justify-center text-2xl shrink-0">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">Express.js</h4>
+                        <p class="text-xs text-slate-400">REST APIs</p>
+                    </div>
+                </div>
+
+                <!-- MongoDB -->
+                <div class="skill-card db web all glass p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition duration-300 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600/10 text-emerald-500 flex items-center justify-center text-2xl shrink-0">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">MongoDB</h4>
+                        <p class="text-xs text-slate-400">NoSQL Database</p>
+                    </div>
+                </div>
+
+                <!-- Java -->
+                <div class="skill-card lang all glass p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition duration-300 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-2xl shrink-0">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">Java</h4>
+                        <p class="text-xs text-slate-400">Oracle Certified</p>
+                    </div>
+                </div>
+
+                <!-- Python -->
+                <div class="skill-card lang all glass p-6 rounded-2xl border border-slate-800 hover:border-indigo-400/50 transition duration-300 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-2xl shrink-0">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">Python</h4>
+                        <p class="text-xs text-slate-400">Red Hat Certified</p>
+                    </div>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="skill-card lang web all glass p-6 rounded-2xl border border-slate-800 hover:border-yellow-400/50 transition duration-300 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center text-2xl shrink-0">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">JavaScript</h4>
+                        <p class="text-xs text-slate-400">ES6+ Web Logic</p>
+                    </div>
+                </div>
+
+                <!-- C Language -->
+                <div class="skill-card lang all glass p-6 rounded-2xl border border-slate-800 hover:border-blue-400/50 transition duration-300 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl font-bold shrink-0">
+                        C
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">C Programming</h4>
+                        <p class="text-xs text-slate-400">Procedural Basis</p>
+                    </div>
+                </div>
+
+                <!-- MySQL -->
+                <div class="skill-card db all glass p-6 rounded-2xl border border-slate-800 hover:border-sky-600/50 transition duration-300 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-sky-600/10 text-sky-500 flex items-center justify-center text-2xl shrink-0">
+                        <i class="fas fa-table"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">MySQL</h4>
+                        <p class="text-xs text-slate-400">Relational DB</p>
+                    </div>
+                </div>
+
+                <!-- HTML & CSS -->
+                <div class="skill-card web all glass p-6 rounded-2xl border border-slate-800 hover:border-orange-500/50 transition duration-300 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-400 flex items-center justify-center text-2xl shrink-0">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">HTML5 & CSS3</h4>
+                        <p class="text-xs text-slate-400">Responsive Layouts</p>
+                    </div>
+                </div>
+
+                <!-- Git & GitHub -->
+                <div class="skill-card tools all glass p-6 rounded-2xl border border-slate-800 hover:border-red-500/50 transition duration-300 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center text-2xl shrink-0">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">Git & GitHub</h4>
+                        <p class="text-xs text-slate-400">Version Control</p>
+                    </div>
+                </div>
+
+                <!-- Power BI -->
+                <div class="skill-card tools all glass p-6 rounded-2xl border border-slate-800 hover:border-yellow-500/50 transition duration-300 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center text-2xl shrink-0">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">Power BI</h4>
+                        <p class="text-xs text-slate-400">Data Analytics</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer --><footer class="bg-bgDark text-gray-300 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-sm mb-2">&copy; 2025 Cheppula Ashish. All Rights Reserved.</p>
-            <p class="text-xs">Designed and Developed with <i class="fas fa-heart text-red-500 mx-1"></i> by AI for Ashish.</p>
+    <section id="experience" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs uppercase font-semibold text-indigo-400 tracking-widest mb-2">Work Experience</h2>
+                <p class="text-3xl font-bold font-display text-white">Internship Highlights</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto relative border-l-2 border-indigo-600/30 ml-4 sm:ml-32 space-y-12">
+                
+                <!-- Aim Technologies Internship -->
+                <div class="relative pl-8 sm:pl-10 group">
+                    <div class="absolute -left-[11px] top-1.5 w-5 h-5 rounded-full bg-indigo-600 border-4 border-slate-900 group-hover:scale-125 transition duration-300"></div>
+                    
+                    <div class="glass p-8 rounded-3xl border border-slate-800 space-y-4">
+                        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-4">
+                            <div>
+                                <span class="text-xs font-bold text-indigo-400 uppercase tracking-wider">Aim Technologies • Kakinada</span>
+                                <h3 class="text-xl font-bold text-white mt-1">MERN Stack Developer Intern</h3>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-semibold">
+                                March 2025 - April 2025
+                            </span>
+                        </div>
+
+                        <ul class="space-y-2.5 text-sm text-slate-300 list-disc list-inside">
+                            <li>Contributed to developing robust web applications using MongoDB, Express.js, React.js, and Node.js.</li>
+                            <li>Designed and implemented responsive frontend user interfaces using React.js.</li>
+                            <li>Integrated backend MongoDB databases for dynamic data storage and retrieval.</li>
+                            <li>Collaborated actively with team members across software development lifecycle stages.</li>
+                        </ul>
+
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300">MongoDB</span>
+                            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300">Express.js</span>
+                            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300">React.js</span>
+                            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NoviTech & Vedxlence Internships -->
+                <div class="relative pl-8 sm:pl-10 group">
+                    <div class="absolute -left-[11px] top-1.5 w-5 h-5 rounded-full bg-sky-500 border-4 border-slate-900 group-hover:scale-125 transition duration-300"></div>
+                    
+                    <div class="glass p-8 rounded-3xl border border-slate-800 space-y-4">
+                        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-4">
+                            <div>
+                                <span class="text-xs font-bold text-sky-400 uppercase tracking-wider">NoviTech R&D & Vedxlence Innovations</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Full Stack & Data Analytics Internships</h3>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-semibold">
+                                Jan 2026 - June 2026
+                            </span>
+                        </div>
+
+                        <p class="text-sm text-slate-300">
+                            Completed specialized training masterclasses and internships covering Full Stack Web Development, Artificial Intelligence, Power BI, and Data Analytics workflows.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300">Full Stack</span>
+                            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300">Data Analytics</span>
+                            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300">Power BI</span>
+                            <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300">Artificial Intelligence</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-slate-900/40 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs uppercase font-semibold text-indigo-400 tracking-widest mb-2">Featured Work</h2>
+                <p class="text-3xl font-bold font-display text-white">Full Stack Project</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="glass rounded-3xl border border-slate-800 overflow-hidden hover:border-indigo-500/50 transition duration-500 glow-effect">
+                    <div class="p-8 sm:p-10 space-y-6">
+                        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-6">
+                            <div>
+                                <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-semibold">
+                                    MERN Stack Web Application
+                                </span>
+                                <h3 class="text-2xl sm:text-3xl font-bold text-white mt-2">Personal Expense Tracker</h3>
+                            </div>
+                            
+                            <div class="flex items-center gap-3">
+                                <a href="https://ashish58312.github.io/Personal-Expense-Tracker/" target="_blank" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold transition flex items-center gap-2">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/Ashish58312" target="_blank" class="px-4 py-2 rounded-xl glass hover:bg-slate-800 text-slate-200 text-xs font-semibold border border-slate-700 transition flex items-center gap-2">
+                                    <i class="fab fa-github"></i> Source Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            A full-stack web application designed to help users track and manage their daily expenses efficiently. Features interactive entry forms, data persistence, user authentication, and expense category visualization.
+                        </p>
+
+                        <div class="space-y-3 pt-2">
+                            <h4 class="text-xs font-bold text-indigo-400 uppercase tracking-wider">Key Contributions & Architecture</h4>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
+                                <li class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-2">
+                                    <i class="fas fa-check text-emerald-400 mt-0.5"></i>
+                                    <span>Built intuitive frontend entry & visualization forms with React.js</span>
+                                </li>
+                                <li class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-2">
+                                    <i class="fas fa-check text-emerald-400 mt-0.5"></i>
+                                    <span>Implemented REST API routes in Node.js & Express.js</span>
+                                </li>
+                                <li class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-2">
+                                    <i class="fas fa-check text-emerald-400 mt-0.5"></i>
+                                    <span>Designed MongoDB schemas for users & expense records</span>
+                                </li>
+                                <li class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-2">
+                                    <i class="fas fa-check text-emerald-400 mt-0.5"></i>
+                                    <span>Deployed responsive web interface via GitHub Pages</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800">
+                            <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-indigo-300">MongoDB</span>
+                            <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-indigo-300">Express.js</span>
+                            <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-indigo-300">React.js</span>
+                            <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-indigo-300">Node.js</span>
+                            <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-indigo-300">HTML5 / CSS3</span>
+                            <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-indigo-300">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs uppercase font-semibold text-indigo-400 tracking-widest mb-2">Verified Achievement</h2>
+                <p class="text-3xl font-bold font-display text-white">Certifications & Training</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Oracle Java -->
+                <div onclick="showCertModal('Oracle Java Certified Foundations Associate', 'Oracle University', 'May 12, 2025', 'Certificate ID: 101572820JAVA8OJA')" class="glass p-6 rounded-3xl border border-slate-800 hover:border-amber-500/50 cursor-pointer transition duration-300 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300">Oracle Certified</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base group-hover:text-amber-400 transition">Java Foundations Associate</h3>
+                    <p class="text-xs text-slate-400 mt-1">Oracle University • Issued May 2025</p>
+                    <p class="text-xs text-indigo-400 mt-4 flex items-center gap-1 font-medium">
+                        <span>Click to view details</span> <i class="fas fa-chevron-right text-[10px]"></i>
+                    </p>
+                </div>
+
+                <!-- Red Hat Python -->
+                <div onclick="showCertModal('Introduction to Python Programming (AD141)', 'Red Hat Academy', 'Nov 12, 2024', 'Aditya Academy')" class="glass p-6 rounded-3xl border border-slate-800 hover:border-red-500/50 cursor-pointer transition duration-300 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-red-500/10 text-red-500 flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-red-500/20 text-red-300">Red Hat Certified</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base group-hover:text-red-400 transition">Introduction to Python (AD141)</h3>
+                    <p class="text-xs text-slate-400 mt-1">Red Hat Training • Issued Nov 2024</p>
+                    <p class="text-xs text-indigo-400 mt-4 flex items-center gap-1 font-medium">
+                        <span>Click to view details</span> <i class="fas fa-chevron-right text-[10px]"></i>
+                    </p>
+                </div>
+
+                <!-- NoviTech Full Stack -->
+                <div onclick="showCertModal('30 Days MasterClass in Full Stack Development', 'NoviTech R&D Pvt. Ltd.', 'March 14, 2026', 'Certificate ID: NT_B13FSDEE93')" class="glass p-6 rounded-3xl border border-slate-800 hover:border-indigo-500/50 cursor-pointer transition duration-300 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300">NoviTech MasterClass</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base group-hover:text-indigo-300 transition">Full Stack Development</h3>
+                    <p class="text-xs text-slate-400 mt-1">NoviTech R&D • Issued March 2026</p>
+                    <p class="text-xs text-indigo-400 mt-4 flex items-center gap-1 font-medium">
+                        <span>Click to view details</span> <i class="fas fa-chevron-right text-[10px]"></i>
+                    </p>
+                </div>
+
+                <!-- Vedxlence Data Analytics -->
+                <div onclick="showCertModal('Data Analytics Program Internship', 'Vedxlence Innovations Pvt. Ltd.', 'June 2026', 'Certificate ID: VDX-2026-IC-BNDERS')" class="glass p-6 rounded-3xl border border-slate-800 hover:border-emerald-500/50 cursor-pointer transition duration-300 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300">Vedxlence Internship</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base group-hover:text-emerald-300 transition">Data Analytics Internship</h3>
+                    <p class="text-xs text-slate-400 mt-1">Vedxlence Innovations • Issued June 2026</p>
+                    <p class="text-xs text-indigo-400 mt-4 flex items-center gap-1 font-medium">
+                        <span>Click to view details</span> <i class="fas fa-chevron-right text-[10px]"></i>
+                    </p>
+                </div>
+
+                <!-- NoviTech AI -->
+                <div onclick="showCertModal('Artificial Intelligence Internship', 'NoviTech R&D Pvt. Ltd.', 'February 2026', 'Certificate ID: AIINE4212')" class="glass p-6 rounded-3xl border border-slate-800 hover:border-sky-500/50 cursor-pointer transition duration-300 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-sky-500/20 text-sky-300">NoviTech Certified</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base group-hover:text-sky-300 transition">Artificial Intelligence Internship</h3>
+                    <p class="text-xs text-slate-400 mt-1">NoviTech R&D • Issued Feb 2026</p>
+                    <p class="text-xs text-indigo-400 mt-4 flex items-center gap-1 font-medium">
+                        <span>Click to view details</span> <i class="fas fa-chevron-right text-[10px]"></i>
+                    </p>
+                </div>
+
+                <!-- Infosys & Cisco -->
+                <div onclick="showCertModal('Java, Python & Web Development Foundations', 'Infosys Springboard & Cisco', 'Ongoing', 'Skill Validation')" class="glass p-6 rounded-3xl border border-slate-800 hover:border-indigo-400/50 cursor-pointer transition duration-300 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300">Infosys & Cisco</span>
+                    </div>
+                    <h3 class="font-bold text-white text-base group-hover:text-indigo-300 transition">Java, Python & Web Dev</h3>
+                    <p class="text-xs text-slate-400 mt-1">Infosys Springboard & Cisco Courses</p>
+                    <p class="text-xs text-indigo-400 mt-4 flex items-center gap-1 font-medium">
+                        <span>Click to view details</span> <i class="fas fa-chevron-right text-[10px]"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-slate-900/60 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs uppercase font-semibold text-indigo-400 tracking-widest mb-2">Get In Touch</h2>
+                <p class="text-3xl font-bold font-display text-white">Let's Connect & Collaborate</p>
+                <p class="text-slate-400 text-sm mt-2">Open for software engineering roles, internships, and project discussions</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <div class="lg:col-span-6 space-y-4">
+                    <div class="glass p-6 rounded-2xl border border-slate-800 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl shrink-0">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="overflow-hidden">
+                            <p class="text-xs text-slate-400">Email Address</p>
+                            <a href="mailto:awesome.ashish.2005@gmail.com" class="font-bold text-white text-sm hover:text-indigo-400 transition truncate block">
+                                awesome.ashish.2005@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="glass p-6 rounded-2xl border border-slate-800 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400">Phone Number</p>
+                            <a href="tel:+919515522243" class="font-bold text-white text-sm hover:text-emerald-400 transition">
+                                +91 951552243 / +91 9515522243
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="glass p-6 rounded-2xl border border-slate-800 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl shrink-0">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400">Current Location</p>
+                            <p class="font-bold text-white text-sm">Aditya Engineering College, Kakinada / Surampalem, AP</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 glass p-8 rounded-3xl border border-slate-800 space-y-6">
+                    <h3 class="text-xl font-bold text-white">Find Me Across The Web</h3>
+                    <p class="text-xs text-slate-400">Click any card below to directly open my profile page</p>
+
+                    <div class="grid grid-cols-2 gap-3 text-xs">
+                        <a href="https://github.com/Ashish58312" target="_blank" class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500 text-slate-200 hover:text-white transition flex items-center gap-2.5">
+                            <i class="fab fa-github text-indigo-400 text-lg"></i>
+                            <span class="font-semibold">GitHub Profile</span>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/ashish-cheppula-369b23294/" target="_blank" class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-sky-500 text-slate-200 hover:text-white transition flex items-center gap-2.5">
+                            <i class="fab fa-linkedin-in text-sky-400 text-lg"></i>
+                            <span class="font-semibold">LinkedIn Network</span>
+                        </a>
+
+                        <a href="https://leetcode.com/u/ashish583/" target="_blank" class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-amber-500 text-slate-200 hover:text-white transition flex items-center gap-2.5">
+                            <i class="fas fa-code text-amber-500 text-lg"></i>
+                            <span class="font-semibold">LeetCode</span>
+                        </a>
+
+                        <a href="https://www.geeksforgeeks.org/profile/awesomeashish?tab=activity" target="_blank" class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500 text-slate-200 hover:text-white transition flex items-center gap-2.5">
+                            <i class="fas fa-laptop-code text-emerald-400 text-lg"></i>
+                            <span class="font-semibold">GeeksforGeeks</span>
+                        </a>
+
+                        <a href="https://www.codechef.com/users/ashish583" target="_blank" class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-amber-700 text-slate-200 hover:text-white transition flex items-center gap-2.5 col-span-2">
+                            <i class="fas fa-utensils text-amber-600 text-lg"></i>
+                            <span class="font-semibold">CodeChef Profile (@ashish583)</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 bg-[#070a12] border-t border-slate-800/80 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>&copy; 2026 Cheppula Ashish. All rights reserved.</p>
+            <p class="mt-1">Aditya Engineering College • B.Tech Computer Science Engineering</p>
         </div>
     </footer>
 
-    <!-- Style for skill badges --><style>
-        .skill-badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 8px 16px;
-            border-radius: 9999px; /* Full rounded */
-            font-weight: 600;
-            font-size: 0.9rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            transition: transform 0.2s ease-in-out;
-        }
-        .skill-badge:hover {
-            transform: translateY(-2px);
-        }
-        .skill-badge i {
-            margin-right: 8px;
-        }
-    </style>
+    <!-- Resume Overview Modal -->
+    <div id="resume-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass w-full max-w-3xl max-h-[90vh] rounded-3xl border border-slate-800 overflow-hidden flex flex-col">
+            <div class="p-6 border-b border-slate-800 flex items-center justify-between">
+                <div>
+                    <h3 class="text-xl font-bold text-white">Cheppula Ashish - Resume Overview</h3>
+                    <p class="text-xs text-indigo-400">4th Year B.Tech CSE • CGPA 7.75/10.00</p>
+                </div>
+                <button onclick="closeResumeModal()" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center text-lg">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
 
-</body>
-</html>
+            <div class="p-6 overflow-y-auto space-y-6 text-slate-300 text-sm">
+                <div>
+                    <h4 class="text-xs uppercase font-bold text-indigo-400 tracking-wider">Education</h4>
+                    <div class="mt-2 p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+                        <p class="font-bold text-white">Aditya Engineering College (2023 - 2027)</p>
+                        <p class="text-xs text-slate-400">B.Tech in Computer Science Engineering • CGPA: 7.75 / 10.00</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xs uppercase font-bold text-indigo-400 tracking-wider">Experience</h4>
+                    <div class="mt-2 p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+                        <p class="font-bold text-white">MERN Stack Developer Intern — Aim Technologies</p>
+                        <p class="text-xs text-slate-400">March 2025 – April 2025</p>
+                        <p class="text-xs text-slate-300 mt-2">Developed MERN stack web applications, integrated MongoDB, designed React.js components, and collaborated across SDLC.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xs uppercase font-bold text-indigo-400 tracking-wider">Project</h4>
+                    <div class="mt-2 p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+                        <p class="font-bold text-white">Expense Tracker (MERN Stack)</p>
+                        <p class="text-xs text-slate-300">Full-stack web application for tracking daily expenses using MongoDB, Express, React, and Node.js.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xs uppercase font-bold text-indigo-400 tracking-wider">Key Certifications</h4>
+                    <ul class="mt-2 space-y-1 text-xs text-slate-300 list-disc list-inside">
+                        <li>Oracle Certified Foundations Associate - Java</li>
+                        <li>Red Hat Training - Introduction to Python (AD141)</li>
+                        <li>NoviTech MasterClasses (Full Stack, AI, Power BI)</li>
+                        <li>Vedxlence Data Analytics Internship</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="p-4 border-t border-slate-800 bg-slate-900/80 flex items-center justify-between">
+                <a href="mailto:awesome.ashish.2005@gmail.com" class="text-xs font-semibold text-indigo-400 hover:underline">
+                    <i class="fas fa-envelope mr-1"></i> Contact Ashish
+                </a>
+                <button onclick="closeResumeModal()" class="px-5 py-2 rounded-xl bg-indigo-600 text-white font-semibold text-xs">
+                    Close Overview
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate Details Modal -->
+    <div id="cert-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass w-full max-w-md rounded-3xl border border-slate-800 p-6 space-y-4">
+            <div class="flex items-center justify-between">
+                <span id="cert-modal-tag" class="text-xs font-semibold px-2.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300">Verified Certificate</span>
+                <button onclick="closeCertModal()" class="text-slate-400 hover:text-white">
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+            </div>
+            <h3 id="cert-modal-title" class="text-xl font-bold text-white">Certificate Name</h3>
+            <p id="cert-modal-org" class="text-xs text-indigo-400 font-medium">Issuer Organization</p>
+            <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-xs space-y-2">
+                <p id="cert-modal-date" class="text-slate-300"><span class="text-slate-500">Date Issued:</span> May 2025</p>
+                <p id="cert-modal-id" class="text-slate-300"><span class="text-slate-500">Credential Ref:</span> ID_NUMBER</p>
+            </div>
+            <button onclick="closeCertModal()" class="w-full py-2.5 rounded-xl bg-indigo-600 text-white font-semibold text-xs">
+                Done
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function handleProfileImgError(img) {
+            // Check through local user image filenames
+            const localSources = ['ashish_8.jpg', 'ashish_7.jpg', 'ashish_6.jpg', 'ashish_5.jpg', 'ashish_4.jpg', 'ashish_3.jpg', 'ashish_2.jpg', 'ashish.jpg'];
+            let currentIndex = img.dataset.sourceIndex ? parseInt(img.dataset.sourceIndex) : 0;
+
+            if (currentIndex < localSources.length - 1) {
+                currentIndex++;
+                img.dataset.sourceIndex = currentIndex;
+                img.src = localSources[currentIndex];
+            } else {
+                // If local image files aren't in the current folder yet, display an elegant name avatar
+                img.onerror = null;
+                const parentDiv = img.parentElement;
+                parentDiv.innerHTML = `
+                    <div class="w-full h-full bg-slate-900 flex flex-col items-center justify-center p-6 text-center">
+                        <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-indigo-600 to-sky-400 flex items-center justify-center text-3xl font-bold text-white shadow-lg mb-4">
+                            CA
+                        </div>
+                        <h4 class="text-lg font-bold text-white">Cheppula Ashish</h4>
+                        <p class="text-xs text-indigo-400 mt-1">Place <code class="bg-slate-800 px-1.5 py-0.5 rounded text-amber-300">ashish_8.jpg</code> in project folder</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Mobile menu toggle
+<!-- ... existing code -->
